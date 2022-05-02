@@ -1,0 +1,14 @@
+{
+  "name": "list-of-things",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "dev": "yarn build; yarn start"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
