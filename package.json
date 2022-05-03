@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "fetch-sparql-endpoint": "^2.4.0"
   }
 }
