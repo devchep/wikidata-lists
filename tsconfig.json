@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react-jsx",
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Language and Environment */
@@ -19,5 +20,9 @@
     "outDir": "./dist",
 
   },
-  "include": ["src/**/*", "tests/**/*", "server.ts"],
+  "include": [
+    "src/**/*",
+    "pages/**/*",
+    "public/**/*",
+     "server.ts", "query.ts", "sparql"],
 }
