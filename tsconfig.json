@@ -20,9 +20,5 @@
     "outDir": "./dist",
 
   },
-  "include": [
-    "src/**/*",
-    "pages/**/*",
-    "public/**/*",
-     "server.ts", "query.ts", "sparql"],
+  "include": ["src/**/*"]
 }
