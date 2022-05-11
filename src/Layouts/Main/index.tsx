@@ -1,9 +1,9 @@
 import React from 'react'
-import './main.scss'
+import styles from './main.scss'
 
 export default function Main() {
     return (
-        <main>
+        <main className={styles.main}>
             main
         </main>
     )

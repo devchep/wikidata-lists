@@ -1,6 +1,11 @@
-$header_color: #b85c27;
+$backgroundColor: #b85c27;
 
-header {
-    color: $header_color;
+.header {
+    color: $backgroundColor;
+    font-size: 50px;
+}
+
+.header__logo {
+    color: #fff;
     font-size: 50px;
 }
