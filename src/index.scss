@@ -1,0 +1,19 @@
+// remove default lists styling
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+// remove default margin
+body,
+h1,
+h2,
+h3,
+h4,
+p{
+  margin: 0;
+}
+
+body {
+    min-height: 100vh;
+}
