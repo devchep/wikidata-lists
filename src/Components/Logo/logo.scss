@@ -1,0 +1,19 @@
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &__text {
+        color: #fff;
+        margin-left: 5px;
+        margin-top: 6px;
+    }
+    &__text--hovered {
+        color: #28345F;
+        text-decoration: underline;
+    }
+}

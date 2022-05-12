@@ -1,0 +1,17 @@
+.header-pin {
+    position: absolute;
+    width: 18%;
+    min-width: 200px;
+    height: 40px;
+    left: 0px;
+    top: 65px;
+
+    background: #B85C27;
+    border-radius: 0px 0px 100px 0px;
+
+    &__text {
+        padding: 10px 0 10px 25px;
+        font-size: 16px;
+        color: #fff;
+    }
+}

@@ -1,11 +1,14 @@
 $backgroundColor: #b85c27;
 
 .header {
-    color: $backgroundColor;
-    font-size: 50px;
-}
+    position: relative;
+    background-color: $backgroundColor;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
 
-.header__logo {
-    color: #fff;
-    font-size: 50px;
+    &__logo-wrapper {
+        padding-left: 20px;
+    }
 }

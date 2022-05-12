@@ -6,7 +6,7 @@ module.exports = {
     output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
     mode: process.env.NODE_ENV || "development",
     resolve: {
-        extensions: [".js", ".jsx", ".tsx", ".ts"],
+        extensions: [".js", ".jsx", ".tsx", ".ts", ".scss"],
     },
     module: {
         rules: [
