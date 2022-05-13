@@ -1,6 +1,6 @@
 // remove default lists styling
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol{
   list-style: none;
 }
 
@@ -12,6 +12,11 @@ h3,
 h4,
 p{
   margin: 0;
+}
+
+// remove link underline
+a {
+  text-decoration: none;
 }
 
 body {

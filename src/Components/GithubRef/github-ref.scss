@@ -1,0 +1,25 @@
+.github-link {
+    display: flex;
+    align-items: center;
+
+    &__img {
+        width: 28px;
+        height: 28px;
+
+        &--hovered {
+            filter: brightness(200%);
+        }
+    }
+
+    &__text {
+        margin-left: 6px;
+        font-size: 20px;
+        color: #fff;
+
+        &--hovered {
+            text-decoration: underline;
+            color: #FFA800;
+        }
+    }
+
+}
