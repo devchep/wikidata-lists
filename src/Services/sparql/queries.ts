@@ -1,5 +1,4 @@
-export const itemsByNameQuery = (item: string, limit: number, offset: number) => {
-    return `
+export const itemsByNameQuery = (item: string, limit: number, offset: number) => `
         SELECT ?instance ?instanceLabel ?imgsourceLabel WHERE {
             VALUES ?item_name {"${item}"@en}
             ?sitelink schema:about ?item;
@@ -12,15 +11,12 @@ export const itemsByNameQuery = (item: string, limit: number, offset: number) =>
         
             SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
         }
-        limit ${limit} offset ${offset}`
-}
+        limit ${limit} offset ${offset}`;
 
-export const articleByEntityQuery = (entity: string) => {
-    return `
+export const articleByEntityQuery = (entity: string) => `
         SELECT ?article WHERE {
             VALUES ?entity {<${entity}>}
             ?article schema:about ?entity .
             ?article schema:inLanguage "en" .
             ?article schema:isPartOf <https://en.wikipedia.org/>.
-        }`
-}
+        }`;
