@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "webpack": "webpack",
-    "start-webpack": "webpack serve"
+    "start-webpack": "webpack serve",
+    "lint": "eslint src/*/*/*",
+    "prettier": "prettier --write \"src/**/*.{js,ts,tsx}\""
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
@@ -24,14 +26,17 @@
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "node-sass": "^7.0.1",
     "path": "^0.12.7",
+    "prettier": "^2.6.2",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.0",
