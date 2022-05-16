@@ -1,0 +1,59 @@
+$inactive-bg_color: #CCCCCC;
+$inactive-text_color: #787878;
+$active-text_color: #fff;
+$primary_color: #2A5493;
+
+.search-form {
+    display: flex;
+    margin-top: 38px;
+    position: relative;
+
+    &__input {
+        z-index: 10;
+        width: 320px;
+        height: 40px;
+        border: none;
+        border-bottom: 2px solid $primary_color;
+        border-radius: 25px;
+        padding-bottom: 2px;
+        text-align: center;
+        font-size: inherit;
+    
+        &:hover, &:focus {
+            padding-bottom: 0px;
+            border-bottom: 4px solid $primary_color;
+            outline: none;
+        }
+    
+        &:focus::placeholder {
+            color: transparent;
+        }
+    
+        &::placeholder {
+            font-size: 16px;
+        }
+    }
+}
+
+.submit-button {
+    cursor: pointer;
+    width: 100px;
+    height: 45px;
+    position: absolute;
+    right: -80px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    color: $inactive-text_color;
+    background-color: $inactive-bg_color;
+    font-size: 16px;
+
+    &__text {
+        padding-left: 20px;
+    }
+
+    &--active {
+        color: $active-text_color;
+        background-color: $primary_color;
+    }
+}

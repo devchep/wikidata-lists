@@ -9,7 +9,8 @@ export default function Logo() {
     const [isHovered, setIsHovered] = useState<boolean>(false)
 
     return (
-        <div
+        <a
+            href='/'
             className={styles.logo}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -23,6 +24,6 @@ export default function Logo() {
             >
                 Wikilists
             </p>
-        </div>
+        </a>
     )
 }
