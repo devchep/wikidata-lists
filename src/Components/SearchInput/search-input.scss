@@ -1,10 +1,9 @@
+$primary_color: #2A5493;
 $inactive-bg_color: #CCCCCC;
 $inactive-text_color: #787878;
 $active-text_color: #fff;
-$primary_color: #2A5493;
 
 .search-form {
-    display: flex;
     margin-top: 38px;
     position: relative;
 
@@ -12,25 +11,44 @@ $primary_color: #2A5493;
         z-index: 10;
         width: 320px;
         height: 40px;
+        position: relative;
         border: none;
         border-bottom: 2px solid $primary_color;
         border-radius: 25px;
         padding-bottom: 2px;
         text-align: center;
-        font-size: inherit;
-    
-        &:hover, &:focus {
+        font-size: 20px;
+
+        &:hover,
+        &:focus {
             padding-bottom: 0px;
             border-bottom: 4px solid $primary_color;
             outline: none;
         }
-    
+
         &:focus::placeholder {
             color: transparent;
         }
-    
+
         &::placeholder {
             font-size: 16px;
+        }
+    }
+
+    & label {
+        margin-bottom: 16px;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #000;
+        font-size: 26px;
+        border-radius: 5px;
+
+        & p {
+            margin-left: 10px;
+            padding-right: 10px;
         }
     }
 }
@@ -55,5 +73,9 @@ $primary_color: #2A5493;
     &--active {
         color: $active-text_color;
         background-color: $primary_color;
+
+        &:hover {
+            background-color: #1b3761;
+        }
     }
 }

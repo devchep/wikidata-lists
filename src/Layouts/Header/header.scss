@@ -1,8 +1,8 @@
-$backgroundColor: #b85c27;
+$backgroundColor: linear-gradient(0.25turn, #584889, #2A5493);
 
 .header {
     position: relative;
-    background-color: $backgroundColor;
+    background: $backgroundColor;
     display: flex;
     align-items: center;
     width: 100%;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import SearchIcon from '../../Assets/SearchIcon'
 import styles from './search-input.scss'
 
 export default function SearchInput() {
@@ -18,6 +19,10 @@ export default function SearchInput() {
 
     return (
         <form className={styles['search-form']}>
+            <label htmlFor='search-input'>
+                <SearchIcon />
+                <p>Start exploring</p>
+            </label>
             <input
                 className={styles['search-form__input']}
                 type='text'

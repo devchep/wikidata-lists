@@ -1,5 +1,6 @@
-$background_color: #DDDDDD;
-$support_color: #2A5493;
+$background_color: #EAEAEA;
+$link_color: #0073DE;
+$link-hover_color: #FFA800;
 
 .main {
     display: flex;
@@ -11,11 +12,31 @@ $support_color: #2A5493;
 }
 
 .cta {
-    margin-top: 100px;
+    margin-top: 180px;
+    font-size: 24px;
+    position: relative;
+
+    &__text {
+        text-align: center;
+    }
+
     &__text-button {
         cursor: pointer;
-        color: #0073DE;
+        color: $link_color;
         text-decoration: underline;
         font-weight: bold;
+
+        &:hover {
+            text-decoration-color: #000;
+            color: $link-hover_color;
+        }
+    }
+
+    &__image-wrapper {
+        position: absolute;
+        top: -90px;
+        right: -200px;
+        width: 180px;
+        height: auto;
     }
 }
