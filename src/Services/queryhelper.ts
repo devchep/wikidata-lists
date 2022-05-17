@@ -1,22 +1,28 @@
 import { SparqlEndpointFetcher } from 'fetch-sparql-endpoint'
 import { IBindings } from 'sparqljson-parse'
+import { Card } from './services'
 import * as queries from './sparql/queries'
 
 const fetcher = new SparqlEndpointFetcher()
 
-const executeQuery = async () => {
+const executeQuery = async (item: string): Promise<Card[]> => {
+    const cards: Card[] = []
+
     const bindingsStream = await fetcher.fetchBindings(
         'https://query.wikidata.org/sparql',
-        queries.itemsByNameQuery('Dog', 10, 0)
+        queries.itemsByNameQuery(item, 10, 0)
     )
 
     bindingsStream.on('data', (data: IBindings) => {
-        const instance = data['instance']['value']
-        const image = data['imgsourceLabel']['value']
-        const name = data['instanceLabel']['value']
-        console.log(instance)
-        console.log(image, name)
+        const card: Card = {
+            name: data.instanceLabel.value,
+            imageurl: data.imgsourceLabel.value,
+            instance: data.instance.value,
+        }
+        cards.push(card)
     })
+
+    return cards
 }
 
-executeQuery()
+export default executeQuery

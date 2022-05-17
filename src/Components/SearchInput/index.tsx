@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import SearchIcon from '../../Assets/SearchIcon'
+import executeQuery from '../../Services/queryhelper'
 import styles from './search-input.scss'
 
 export default function SearchInput() {
-    const [isFocused, setIsFocused] = useState<boolean>(false)
+    const [isActive, setIsActive] = useState<boolean>(false)
     const [isFilled, setIsFilled] = useState<boolean>(false)
-    const [userInput, setUserInput] = useState<string>()
+    const [userInput, setUserInput] = useState<string>('')
 
     const handleInputChange = (value: string) => {
         setUserInput(value)
@@ -15,6 +16,18 @@ export default function SearchInput() {
             return
         }
         setIsFilled(true)
+    }
+
+    const handleInputBlur = () => {
+        if (isFilled) {
+            return
+        }
+        setIsActive(false)
+    }
+
+    const handlePress = async () => {
+        const cards = await executeQuery(userInput)
+        console.log(cards)
     }
 
     return (
@@ -28,17 +41,18 @@ export default function SearchInput() {
                 type='text'
                 id='search-input'
                 placeholder='Try to type something... e.g. Airport'
-                onFocus={() => setIsFocused(true)}
-                onBlur={() => setIsFocused(false)}
+                onFocus={() => setIsActive(true)}
+                onBlur={() => handleInputBlur()}
                 value={userInput}
                 onChange={(e) => handleInputChange(e.target.value)}
             />
-            {isFocused && (
+            {isActive && (
                 <button
                     className={`${styles['submit-button']} ${
                         isFilled && styles['submit-button--active']
                     }`}
-                    type='submit'
+                    type='button'
+                    onClick={() => handlePress()}
                 >
                     <span className={styles['submit-button__text']}>Go</span>
                 </button>
