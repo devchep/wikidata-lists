@@ -54,7 +54,6 @@ $active-text_color: #fff;
 }
 
 .submit-button {
-    cursor: pointer;
     width: 100px;
     height: 45px;
     position: absolute;
@@ -71,6 +70,7 @@ $active-text_color: #fff;
     }
 
     &--active {
+        cursor: pointer;
         color: $active-text_color;
         background-color: $primary_color;
 
