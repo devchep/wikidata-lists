@@ -51,6 +51,8 @@
     "buffer": "^6.0.3",
     "express": "^4.18.1",
     "fetch-sparql-endpoint": "^2.4.0",
+    "mobx": "^6.5.0",
+    "mobx-react-lite": "^3.4.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "sparqljson-parse": "^1.7.0",

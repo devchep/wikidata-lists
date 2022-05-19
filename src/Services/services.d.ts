@@ -3,3 +3,5 @@ export interface Card {
     imageurl: string
     instance: string
 }
+
+export type FetchStatus = 'pending' | 'empty' | 'done' | 'error' | undefined

@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import SearchIcon from '../../Assets/SearchIcon'
-import executeQuery from '../../Services/queryhelper'
+import Gallery from '../../Services/gallery/Gallery'
 import styles from './search-input.scss'
 
-export default function SearchInput() {
+interface SearchInputProps {
+    fetch: Gallery['fetch']
+}
+
+export default function SearchInput({ fetch }: SearchInputProps) {
     const [isActive, setIsActive] = useState<boolean>(false)
     const [isFilled, setIsFilled] = useState<boolean>(false)
     const [userInput, setUserInput] = useState<string>('')
@@ -26,8 +30,8 @@ export default function SearchInput() {
     }
 
     const handlePress = async () => {
-        const cards = await executeQuery(userInput)
-        console.log(cards)
+        setIsActive(false)
+        fetch(userInput)
     }
 
     return (
