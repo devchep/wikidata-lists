@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction } from 'mobx'
+import { makeAutoObservable } from 'mobx'
 import { IBindings } from 'sparqljson-parse'
 import executeItemsByNameQuery from '../queryhelper'
 import { Card, FetchStatus } from '../services'
@@ -36,9 +36,7 @@ export default class Gallery {
                     imageurl: data.imgsourceLabel.value,
                     instance: data.instance.value,
                 }
-                runInAction(() => {
-                    this.cards.push(card)
-                })
+                this.cards.push(card)
             })
 
             bindingsStream.on('end', () => {
@@ -50,9 +48,7 @@ export default class Gallery {
                 this.setStatus('done')
             })
         } catch (e) {
-            runInAction(() => {
-                this.setStatus('error')
-            })
+            this.setStatus('error')
         }
     }
 }
