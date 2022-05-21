@@ -8,7 +8,7 @@ export default class Gallery {
 
     fetchStatus: FetchStatus = undefined
 
-    limit = 10
+    limit = 9
 
     offset = 0
 

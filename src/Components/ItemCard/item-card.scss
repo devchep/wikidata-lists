@@ -1,0 +1,32 @@
+$background: linear-gradient(#221c33, #17073f);
+
+.card {
+    padding: 1em;
+    background: $background;
+    border-radius: 0 25px 0 25px;
+
+    &__link {
+        height: 26vw;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            filter: brightness(90%);
+        }
+    }
+
+    &__img {
+        width: 18vw;
+        height: auto;
+    }
+
+    &__name {
+        position: absolute;
+        overflow: hidden;
+        font-size: 24px;
+        color: #fff;
+    }
+}
