@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import SearchIcon from '../../Assets/SearchIcon'
-import Gallery from '../../Services/gallery/Gallery'
 import styles from './search-input.scss'
 
-interface SearchInputProps {
-    fetch: Gallery['fetch']
-}
-
-export default function SearchInput({ fetch }: SearchInputProps) {
+export default function SearchInput() {
+    const navigate = useNavigate()
     const [isActive, setIsActive] = useState<boolean>(false)
     const [isFilled, setIsFilled] = useState<boolean>(false)
     const [userInput, setUserInput] = useState<string>('')
@@ -31,7 +28,7 @@ export default function SearchInput({ fetch }: SearchInputProps) {
 
     const handlePress = async () => {
         setIsActive(false)
-        fetch(userInput)
+        navigate(`/${userInput}`)
     }
 
     return (

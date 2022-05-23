@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import Footer from './Layouts/Footer'
 import Header from './Layouts/Header'
 import Main from './Layouts/Main'
@@ -8,13 +9,13 @@ import Gallery from './Services/gallery/Gallery'
 
 function Index() {
     return (
-        <>
+        <BrowserRouter>
             <Header />
             <GalleryProvider value={{ gallery: new Gallery() }}>
                 <Main />
             </GalleryProvider>
             <Footer />
-        </>
+        </BrowserRouter>
     )
 }
 

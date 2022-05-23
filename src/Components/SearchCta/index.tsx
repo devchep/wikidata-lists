@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import CtaCatImage from '../../Assets/CtaCatImage'
 import styles from './search-cta.scss'
 
@@ -9,9 +10,9 @@ export default function SearchCta() {
                 You haven’t searched anything yet...
                 <br />
                 What about{' '}
-                <a href='/' className={styles['cta__text-button']}>
+                <Link to='/Cat' className={styles['cta__text-button']}>
                     Cats
-                </a>
+                </Link>
                 ?
             </p>
             <div className={styles['cta__image-wrapper']}>

@@ -55,6 +55,7 @@
     "mobx-react-lite": "^3.4.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-router-dom": "6",
     "sparqljson-parse": "^1.7.0",
     "stream-browserify": "^3.0.0"
   }

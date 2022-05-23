@@ -1,44 +1,18 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { observer } from 'mobx-react-lite'
-import { autorun } from 'mobx'
-import SearchInput from '../../Components/SearchInput'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import styles from './main.scss'
-import { GalleryContext } from '../../Services/gallery/GalleryContext'
+import SearchInput from '../../Components/SearchInput'
 import SearchCta from '../../Components/SearchCta'
-import Loader from '../../Components/Loader'
-import Gallery from '../../Components/Gallery'
-import Empty from '../../Components/Empty'
+import ItemGallery from '../../Components/ItemGallery'
 
-const Main = observer(() => {
-    const { gallery } = useContext(GalleryContext)
-    const [content, setContent] = useState(<SearchCta />)
-
-    useEffect(
-        () =>
-            autorun(() => {
-                switch (gallery.fetchStatus) {
-                    case 'pending':
-                        setContent(<Loader />)
-                        break
-                    case 'done':
-                        setContent(<Gallery cards={gallery.cards} />)
-                        break
-                    case 'empty':
-                        setContent(<Empty />)
-                        break
-                    default:
-                        setContent(<SearchCta />)
-                }
-            }),
-        []
-    )
-
+export default function Main() {
     return (
         <main className={styles.main}>
-            <SearchInput fetch={gallery.fetch} />
-            {content}
+            <SearchInput />
+            <Routes>
+                <Route path='/' element={<SearchCta />} />
+                <Route path='/:instance' element={<ItemGallery />} />
+            </Routes>
         </main>
     )
-})
-
-export default Main
+}
