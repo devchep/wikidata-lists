@@ -26,13 +26,18 @@ export default function SearchInput() {
         setIsActive(false)
     }
 
-    const handlePress = async () => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+
         setIsActive(false)
         navigate(`/${userInput}`)
     }
 
     return (
-        <form className={styles['search-form']}>
+        <form
+            className={styles['search-form']}
+            onSubmit={(e) => handleSubmit(e)}
+        >
             <label htmlFor='search-input'>
                 <SearchIcon />
                 <p>Start exploring</p>
@@ -41,7 +46,7 @@ export default function SearchInput() {
                 className={styles['search-form__input']}
                 type='text'
                 id='search-input'
-                placeholder='Try to type something... e.g. Airport'
+                placeholder='Try to type something... e.g. Ship'
                 onFocus={() => setIsActive(true)}
                 onBlur={() => handleInputBlur()}
                 value={userInput}
@@ -52,8 +57,7 @@ export default function SearchInput() {
                     className={`${styles['submit-button']} ${
                         isFilled && styles['submit-button--active']
                     }`}
-                    type='button'
-                    onClick={() => handlePress()}
+                    type='submit'
                 >
                     <span className={styles['submit-button__text']}>Go</span>
                 </button>

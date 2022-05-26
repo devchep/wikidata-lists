@@ -7,6 +7,7 @@ $background: linear-gradient(#221c33, #17073f);
 
     &__link {
         height: 26vw;
+        width: 32vh;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -21,6 +22,18 @@ $background: linear-gradient(#221c33, #17073f);
     &__img {
         width: 18vw;
         height: auto;
+        opacity: 0;
+
+        &--loaded {
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+
+        &--fallback {
+            opacity: 1;
+            filter: blur(10px);
+            transition: opacity 1s ease-out;
+        }
     }
 
     &__name {
