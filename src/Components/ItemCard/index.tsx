@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card } from '../../Services/services'
+import { Card } from '../../types'
 import styles from './item-card.scss'
 
 interface ItemCardProps {
@@ -14,7 +14,7 @@ export default function ItemCard({ card }: ItemCardProps) {
             <figure className={styles.card}>
                 <a
                     className={styles.card__link}
-                    href={card.instance}
+                    href={card.article}
                     target='_blank'
                     rel='noreferrer'
                 >

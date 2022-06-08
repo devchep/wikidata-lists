@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx'
 import { IBindings } from 'sparqljson-parse'
 import executeItemsByNameQuery from '../queryhelpers'
-import { Card, FetchStatus } from '../services'
+import { Card, FetchStatus } from '../../types'
 
 export default class GalleryStore {
     instance: string = ''
@@ -52,7 +52,7 @@ export default class GalleryStore {
                 const card: Card = {
                     name: data.name.value,
                     imageurl: data.image.value,
-                    instance: data.instance.value,
+                    article: data.article.value,
                 }
                 fetchedCards.push(card)
             })

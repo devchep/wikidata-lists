@@ -1,7 +1,7 @@
 export interface Card {
     name: string
     imageurl: string
-    instance: string
+    article: string
 }
 
 export type FetchStatus =

@@ -1,5 +1,5 @@
 import { SparqlEndpointFetcher } from 'fetch-sparql-endpoint'
-import * as queries from './sparql/queries'
+import queries from './sparql/queries'
 
 const fetcher = new SparqlEndpointFetcher()
 

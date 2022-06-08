@@ -6,7 +6,7 @@ import Empty from '../Empty'
 import Loader from '../Loader'
 import Error from '../Error'
 import CardsRenderer from '../CardsRenderer'
-import { Card } from '../../Services/services'
+import { Card } from '../../types'
 import useIntersectionObserver from '../helpers'
 import GalleryStore from '../../Services/gallery/GalleryStore'
 
