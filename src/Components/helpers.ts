@@ -22,6 +22,7 @@ const useIntersectionObserver = (
                 }
             })
         }, options)
+
         if (elementRef.current) {
             if (isObserved) scrollObserver.observe(elementRef.current)
             else scrollObserver.unobserve(elementRef.current)

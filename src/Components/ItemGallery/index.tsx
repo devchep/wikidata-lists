@@ -9,6 +9,7 @@ import CardsRenderer from '../CardsRenderer'
 import { Card } from '../../types'
 import useIntersectionObserver from '../helpers'
 import GalleryStore from '../../Services/gallery/GalleryStore'
+import styles from './gallery.scss'
 
 type ItemGalleryParams = {
     instance: string
@@ -71,11 +72,18 @@ function ItemGallery() {
     }, [])
 
     return (
-        <>
+        <div className={styles['gallery-wrapper']}>
+            <h2 className={styles['gallery-heading']}>
+                List of{' '}
+                <span className={styles['gallery-heading__span']}>
+                    {instance.toLocaleUpperCase()}
+                </span>{' '}
+                instances:
+            </h2>
             <CardsRenderer cards={cards} />
             {contentFiller}
             <div ref={intersectionElement} />
-        </>
+        </div>
     )
 }
 

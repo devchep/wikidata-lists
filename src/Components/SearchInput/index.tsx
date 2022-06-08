@@ -35,6 +35,7 @@ export default function SearchInput() {
         event.preventDefault()
 
         setIsActive(false)
+        setIsFilled(false)
         navigate(`/${userInput.toLowerCase()}`)
     }
 
