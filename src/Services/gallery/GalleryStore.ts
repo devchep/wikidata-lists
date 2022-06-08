@@ -1,14 +1,18 @@
 import { makeAutoObservable } from 'mobx'
 import { IBindings } from 'sparqljson-parse'
-import executeItemsByNameQuery from '../queryhelper'
+import executeItemsByNameQuery from '../queryhelpers'
 import { Card, FetchStatus } from '../services'
 
-export default class Gallery {
+export default class GalleryStore {
+    instance: string = ''
+
     cards: Card[] = []
 
-    fetchStatus: FetchStatus = undefined
+    fetchStatus: FetchStatus = null
 
-    limit = 9
+    page = 1
+
+    limit = 12
 
     offset = 0
 
@@ -20,28 +24,49 @@ export default class Gallery {
         this.fetchStatus = status
     }
 
-    fetch = async (item: string) => {
-        this.setStatus('pending')
+    setNew = (instance: string) => {
+        this.offset = 0
+        this.page = 1
+        this.instance = instance
+        this.cards = []
+        this.setStatus(null)
+    }
 
+    fetchNext = () => {
+        this.setStatus('pending-next')
+        this.fetch()
+        this.offset += this.limit
+        this.page += 1
+    }
+
+    fetch = async () => {
         try {
+            const fetchedCards: Card[] = []
             const bindingsStream = await executeItemsByNameQuery(
-                item,
+                this.instance,
                 this.limit,
                 this.offset
             )
 
             bindingsStream.on('data', (data: IBindings) => {
                 const card: Card = {
-                    name: data.instanceLabel.value,
-                    imageurl: data.imgsourceLabel.value,
+                    name: data.name.value,
+                    imageurl: data.image.value,
                     instance: data.instance.value,
                 }
-                this.cards.push(card)
+                fetchedCards.push(card)
             })
 
             bindingsStream.on('end', () => {
+                this.cards.push(...fetchedCards)
+
                 if (this.cards.length === 0) {
                     this.setStatus('empty')
+                    return
+                }
+
+                if (fetchedCards.length === 0) {
+                    this.setStatus('finish')
                     return
                 }
 

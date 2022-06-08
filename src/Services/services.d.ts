@@ -4,4 +4,10 @@ export interface Card {
     instance: string
 }
 
-export type FetchStatus = 'pending' | 'empty' | 'done' | 'error' | undefined
+export type FetchStatus =
+    | null
+    | 'pending-next'
+    | 'done'
+    | 'empty'
+    | 'finish'
+    | 'error'

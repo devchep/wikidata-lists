@@ -10,7 +10,7 @@ export default function SearchCta() {
                 You haven’t searched anything yet...
                 <br />
                 What about{' '}
-                <Link to='/Cat' className={styles['cta__text-button']}>
+                <Link to='/cat' className={styles['cta__text-button']}>
                     Cats
                 </Link>
                 ?

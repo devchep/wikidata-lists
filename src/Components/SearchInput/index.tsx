@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import SearchIcon from '../../Assets/SearchIcon'
 import styles from './search-input.scss'
 
+type SearchInputParams = {
+    instance: string
+}
+
 export default function SearchInput() {
+    const { instance } = useParams<SearchInputParams>() as SearchInputParams
     const navigate = useNavigate()
     const [isActive, setIsActive] = useState<boolean>(false)
     const [isFilled, setIsFilled] = useState<boolean>(false)
@@ -30,7 +35,7 @@ export default function SearchInput() {
         event.preventDefault()
 
         setIsActive(false)
-        navigate(`/${userInput}`)
+        navigate(`/${userInput.toLowerCase()}`)
     }
 
     return (

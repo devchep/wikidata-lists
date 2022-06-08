@@ -5,7 +5,7 @@ import styles from './footer.scss'
 
 export default function Footer() {
     return (
-        <footer className={styles.footer}>
+        <footer className={styles.footer} id='footer-intersection'>
             <ul className={styles.footer__links}>
                 <li>
                     <GitHubRef />

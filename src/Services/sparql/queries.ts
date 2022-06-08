@@ -3,7 +3,7 @@ export const itemsByNameQuery = (
     limit: number,
     offset: number
 ) => `
-        SELECT ?instance ?instanceLabel ?imgsourceLabel WHERE {
+        SELECT ?instance (SAMPLE(?instanceLabel) as ?name) (SAMPLE(?imgsourceLabel) as ?image) WHERE {
             VALUES ?item_name {"${item}"@en}
             ?sitelink schema:about ?item;
             schema:isPartOf <https://en.wikipedia.org/>;
@@ -13,8 +13,14 @@ export const itemsByNameQuery = (
             ?instance p:P18 ?img.
             ?img ps:P18 ?imgsource.
         
-            SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+            SERVICE wikibase:label {
+                ?instance rdfs:label ?instanceLabel . 
+                ?imgsource rdfs:label ?imgsourceLabel .
+                bd:serviceParam wikibase:language "en, ru".
+            }
         }
+        GROUP BY ?instance
+        ORDER BY ?instance
         limit ${limit} offset ${offset}`
 
 export const articleByEntityQuery = (entity: string) => `

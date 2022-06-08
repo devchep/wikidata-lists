@@ -4,16 +4,12 @@ import Footer from './Layouts/Footer'
 import Header from './Layouts/Header'
 import Main from './Layouts/Main'
 import './index.scss'
-import { GalleryProvider } from './Services/gallery/GalleryContext'
-import Gallery from './Services/gallery/Gallery'
 
 function Index() {
     return (
         <BrowserRouter>
             <Header />
-            <GalleryProvider value={{ gallery: new Gallery() }}>
-                <Main />
-            </GalleryProvider>
+            <Main />
             <Footer />
         </BrowserRouter>
     )
