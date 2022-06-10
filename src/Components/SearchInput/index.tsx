@@ -52,11 +52,12 @@ export default function SearchInput() {
                 className={styles['search-form__input']}
                 type='text'
                 id='search-input'
-                placeholder='Try to type something... e.g. Ship'
+                placeholder='Try to search something... e.g. Ship'
                 onFocus={() => setIsActive(true)}
                 onBlur={() => handleInputBlur()}
                 value={userInput}
                 onChange={(e) => handleInputChange(e.target.value)}
+                autoComplete='off'
             />
             {isActive && (
                 <button

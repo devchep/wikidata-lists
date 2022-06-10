@@ -2,8 +2,8 @@
     cursor: default;
     position: absolute;
     width: 18%;
-    min-width: 200px;
-    height: 40px;
+    min-width: 11rem;
+    height: 2rem;
     left: 0px;
     top: 65px;
 
@@ -11,8 +11,8 @@
     border-radius: 0px 0px 100px 0px;
 
     &__text {
-        padding: 10px 0 10px 25px;
-        font-size: 16px;
+        padding: 0.5rem 0 0.5rem 1.2rem;
+        font-size: 0.8rem;
         color: #fff;
     }
 }

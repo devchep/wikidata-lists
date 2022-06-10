@@ -2,14 +2,19 @@ $primary_color: #2A5493;
 $inactive-bg_color: #CCCCCC;
 $inactive-text_color: #787878;
 $active-text_color: #fff;
+$mobileXL_breakpoint: 640px;
 
 .search-form {
-    margin-top: 38px;
     position: relative;
+    margin-top: 38px;
+
+    @media(max-width: $mobileXL_breakpoint) {
+        margin-top: 65px;
+    }
 
     &__input {
         z-index: 10;
-        width: 320px;
+        width: 16rem;
         height: 40px;
         position: relative;
         border: none;
@@ -31,7 +36,7 @@ $active-text_color: #fff;
         }
 
         &::placeholder {
-            font-size: 16px;
+            font-size: 0.8rem;
         }
     }
 
@@ -43,7 +48,7 @@ $active-text_color: #fff;
         justify-content: center;
         text-align: center;
         color: #000;
-        font-size: 26px;
+        font-size: 1.3rem;
         border-radius: 5px;
 
         & p {
@@ -54,19 +59,28 @@ $active-text_color: #fff;
 }
 
 .submit-button {
-    width: 100px;
+    width: 4.5rem;
     height: 45px;
     position: absolute;
-    right: -80px;
+    right: -3.5rem;
     margin-right: 10px;
     border: none;
     border-radius: 0 25px 25px 0;
     color: $inactive-text_color;
     background-color: $inactive-bg_color;
-    font-size: 16px;
+    font-size: 0.8rem;
+
+    @media(max-width: $mobileXL_breakpoint) {
+        right: 0px;
+        bottom: -40px;
+        border-radius: 25px 0 25px 25px;
+    }
 
     &__text {
-        padding-left: 20px;
+        padding-left: 1rem;
+        @media(max-width: $mobileXL_breakpoint) {
+            padding-left: 0.2rem;
+        }
     }
 
     &--active {

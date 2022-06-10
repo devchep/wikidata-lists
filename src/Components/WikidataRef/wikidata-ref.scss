@@ -1,8 +1,18 @@
+$mobileXL_breakpoint: 640px;
+$tablet_breakpoint: 768px;
 .wikidata-link {
     &__img {
         filter: brightness(86%);
         width: 184px;
         height: 52px;
+        @media(max-width: $tablet_breakpoint) {
+            width: 168px;
+            height: 48px;
+        }
+        @media(max-width: $mobileXL_breakpoint) {
+            width: 136px;
+            height: 40px;
+        }
     }
 
     &:hover {

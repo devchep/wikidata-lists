@@ -1,6 +1,9 @@
+$mobileXL_breakpoint: 640px;
+$tablet_breakpoint: 768px;
+
 // remove default lists styling
 ul,
-ol{
+ol {
   list-style: none;
 }
 
@@ -10,7 +13,7 @@ h1,
 h2,
 h3,
 h4,
-p{
+p {
   margin: 0;
 }
 
@@ -20,5 +23,18 @@ a {
 }
 
 body {
-    min-height: 100vh;
+  min-height: 100vh;
+}
+
+html {
+  font-family: 'STIX Two Text', serif;
+  font-size: 20px;
+
+  @media(max-width: $tablet_breakpoint) {
+    font-size: 18px;
+  }
+
+  @media(max-width: $mobileXL_breakpoint) {
+    font-size: 16px;
+  }
 }
