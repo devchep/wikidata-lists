@@ -52,13 +52,19 @@ $mobileXL_breakpoint: 640px;
         border-radius: 5px;
 
         & p {
+            z-index: 10;
             margin-left: 10px;
             padding-right: 10px;
+        }
+
+        & svg {
+            z-index: 10;
         }
     }
 }
 
 .submit-button {
+    z-index: 9;
     width: 4.5rem;
     height: 45px;
     position: absolute;

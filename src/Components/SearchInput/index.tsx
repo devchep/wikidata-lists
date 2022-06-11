@@ -52,7 +52,7 @@ export default function SearchInput() {
                 className={styles['search-form__input']}
                 type='text'
                 id='search-input'
-                placeholder='Try to search something... e.g. Ship'
+                placeholder='Try to search something... e.g. Dog'
                 onFocus={() => setIsActive(true)}
                 onBlur={() => handleInputBlur()}
                 value={userInput}

@@ -13,6 +13,7 @@ export default function Main() {
                 <Route path='/' element={<SearchCta />} />
                 <Route path='/:instance' element={<ItemGallery />} />
             </Routes>
+            <div className={styles.main__background} />
         </main>
     )
 }
