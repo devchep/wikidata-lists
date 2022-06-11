@@ -9,7 +9,6 @@ module.exports = {
         filename: 'index.bundle.js',
         publicPath: '/',
     },
-    mode: process.env.NODE_ENV || 'development',
     resolve: {
         extensions: ['.js', '.jsx', '.tsx', '.ts', '.scss'],
         fallback: {
