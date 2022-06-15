@@ -8,6 +8,9 @@ export type Link = {
 }
 
 export const PIXEL_RATIO = window.devicePixelRatio || 1
+export const LINK_FONT = `${PIXEL_RATIO * 1.1}rem Georgia`
+export const LINK_FONT_HOVER = `${PIXEL_RATIO * 1.75}rem Georgia`
+
 export const BACKGROUND_LINKS: Link[] = [
     { title: 'Dog Breeds', href: '/dog breed', strokeStyle: '#A77214' },
     { title: 'Airplanes', href: '/airplane', strokeStyle: '#73B4D5' },

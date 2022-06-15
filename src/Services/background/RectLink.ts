@@ -1,4 +1,10 @@
-import { randomDec, randomInt } from './definitions'
+import {
+    LINK_FONT,
+    LINK_FONT_HOVER,
+    PIXEL_RATIO,
+    randomDec,
+    randomInt,
+} from './definitions'
 
 interface RectLinkArgs {
     title: string
@@ -6,9 +12,6 @@ interface RectLinkArgs {
     strokeStyle: string
     context: CanvasRenderingContext2D
 }
-
-const LINK_FONT = '2.2rem Georgia'
-const LINK_FONT_HOVER = '3.5rem Georgia'
 
 class RectLink {
     private x: number
@@ -53,8 +56,8 @@ class RectLink {
         this.y = randomInt(0, context.canvas.height - this.linkHeight)
         this.vel_y = 1
         this.vel_x = 1
-        this.vel_y = randomDec(0.5, 1.3)
-        this.vel_x = randomDec(0.5, 1.3)
+        this.vel_y = randomDec(0.25 * PIXEL_RATIO, 0.65 * PIXEL_RATIO)
+        this.vel_x = randomDec(0.5 * PIXEL_RATIO, 0.65 * PIXEL_RATIO)
         if (randomInt(0, 1)) this.vel_x = -this.vel_x
         if (randomInt(0, 1)) this.vel_y = -this.vel_y
 
